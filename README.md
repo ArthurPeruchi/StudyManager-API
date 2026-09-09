@@ -281,20 +281,6 @@ Cada matrícula pertence a um único usuário e a um único curso.
 O relacionamento entre as entidades é implementado utilizando SQLAlchemy ORM.
 
 
-# 🧹 Arquitetura
-
-A aplicação é organizada em camadas, seguindo princípios de Clean Architecture:
-
-- Controllers: responsáveis pelas requisições HTTP e respostas da API.
-- Use Cases: responsáveis pelas regras de negócio.
-- Repositories: responsáveis pelo acesso aos dados através do SQLAlchemy.
-- Models: representam as entidades do banco de dados.
-- Schemas: responsáveis pela validação e estrutura dos dados utilizando Pydantic.
-- Infrastructure: responsável por configurações relacionadas à infraestrutura, como a conexão com o banco.
-
-Essa separação evita que regras de negócio fiquem concentradas nos controllers e facilita a manutenção e evolução da aplicação.
-
-
 # 🧪 Testando a API
 
 A maneira mais simples de testar os endpoints é utilizando a documentação interativa do Swagger:
