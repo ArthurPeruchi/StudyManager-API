@@ -18,25 +18,48 @@ API RESTful para gerenciamento de **usuários, cursos e matrículas**, desenvolv
 ## 📁 Estrutura do projeto
 
 ```text
-StudyManager/
+StudyManager-API/
 ├── app/
 │   ├── controllers/
+│   │   ├── user_controller.py
+│   │   ├── course_controller.py
+│   │   └── enrollment_controller.py
+│   │
 │   ├── infrastructure/
+│   │   └── database.py
+│   │
 │   ├── models/
+│   │   ├── user.py
+│   │   ├── course.py
+│   │   └── enrollment.py
+│   │
 │   ├── repositories/
+│   │   ├── user_repository.py
+│   │   ├── course_repository.py
+│   │   └── enrollment_repository.py
+│   │
 │   ├── schemas/
+│   │   ├── user_schema.py
+│   │   ├── course_schema.py
+│   │   └── enrollment_schema.py
+│   │
 │   ├── usecases/
+│   │   ├── user_usecase.py
+│   │   ├── course_usecase.py
+│   │   └── enrollment_usecase.py
+│   │
 │   └── main.py
+│
 ├── database/
 │   └── schema.sql
+│
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
 └── README.md
 ```
 
-O projeto utiliza uma organização baseada em Clean Architecture, separando as responsabilidades entre controllers, use cases, repositories, models, schemas e infraestrutura.
-
+A estrutura do projeto foi organizada seguindo princípios de Clean Architecture, separando as responsabilidades em diferentes camadas. Os controllers são responsáveis por receber as requisições HTTP e retornar as respostas da API, enquanto os use cases concentram as regras de negócio. Os repositories são responsáveis pelo acesso e manipulação dos dados utilizando SQLAlchemy, e os models representam as entidades do banco de dados e seus relacionamentos. Os schemas utilizam Pydantic para validação e estruturação dos dados de entrada e saída. Por fim, a camada infrastructure concentra configurações relacionadas à infraestrutura da aplicação, como a conexão com o banco de dados. Essa separação reduz o acoplamento entre as partes do sistema, facilita a manutenção e evita que regras de negócio fiquem diretamente nos controllers.
 
 # 🚀 Como executar
 
@@ -119,7 +142,7 @@ Por exemplo:
 
 Depois, execute o arquivo schema.sql nesse banco.
 
-O arquivo schema.sql, localizado em app/database, contém a estrutura necessária para a aplicação, criando as tabelas:
+O arquivo schema.sql, localizado na raiz do projeto (pasta database), contém a estrutura necessária para a aplicação, criando as tabelas:
 
 - users
 - courses
